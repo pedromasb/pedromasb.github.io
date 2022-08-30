@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Ananke</title>
-    <link>https://gohugo-theme-ananke.pages.dev/categories/</link>
-    <description>Recent content in Categories on Ananke</description>
+    <title>Categories on Home</title>
+    <link>https://pedromasb.github.io/categories/</link>
+    <description>Recent content in Categories on Home</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://gohugo-theme-ananke.pages.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R</title>
+      <link>https://pedromasb.github.io/categories/r/</link>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/categories/r/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

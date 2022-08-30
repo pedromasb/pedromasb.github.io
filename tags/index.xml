@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Ananke</title>
-    <link>https://gohugo-theme-ananke.pages.dev/tags/</link>
-    <description>Recent content in Tags on Ananke</description>
+    <title>Tags on Home</title>
+    <link>https://pedromasb.github.io/tags/</link>
+    <description>Recent content in Tags on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Apr 2017 11:14:48 -0400</lastBuildDate><atom:link href="https://gohugo-theme-ananke.pages.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>scene</title>
-      <link>https://gohugo-theme-ananke.pages.dev/tags/scene/</link>
-      <pubDate>Wed, 12 Apr 2017 11:14:48 -0400</pubDate>
+      <title>blog</title>
+      <link>https://pedromasb.github.io/tags/blog/</link>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://gohugo-theme-ananke.pages.dev/tags/scene/</guid>
+      <guid>https://pedromasb.github.io/tags/blog/</guid>
       <description></description>
     </item>
     
