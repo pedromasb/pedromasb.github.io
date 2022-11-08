@@ -6,16 +6,7 @@
     <description>Recent content in blog on Pedro Mas personal webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Test Post</title>
-      <link>https://pedromasb.github.io/post/test-post/</link>
-      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://pedromasb.github.io/post/test-post/</guid>
-      <description>WIP Hi! This is a test post for my blog :) bold text test</description>
-    </item>
-    
+    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The structure of the universe</title>
       <link>https://pedromasb.github.io/post/the-structure-of-the-universe/</link>
@@ -23,16 +14,6 @@
       
       <guid>https://pedromasb.github.io/post/the-structure-of-the-universe/</guid>
       <description>Have you ever wondered what the large-scale structure of our universe looks like? Currently, the ΛCDM (Lambda Cold Dark Matter) model is the most widely accepted model for understanding the formation of structures in the universe. According to this model, small density fluctuations in the primordial universe grew exponentially due to inflation, which caused CDM to collapse in the overdense regions forming halos. Then, baryonic matter (&amp;lsquo;ordinary&amp;rsquo; matter) will gravitationally collapse into these CDM halos.</description>
-    </item>
-    
-    <item>
-      <title>Why every world map is wrong</title>
-      <link>https://pedromasb.github.io/post/why-every-world-map-is-wrong/</link>
-      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://pedromasb.github.io/post/why-every-world-map-is-wrong/</guid>
-      <description>Have you ever wondered how is it possible to represent the Earth on a 2D map? If you haven´t, now is the time.
-In fact, every map of the world you have looked at is wrong, or rather distorted. This is the result of the Mercator projection, which is famous for its ability to represent loxodromes (lines crossing all meridians at a constant angle) as straight segments. Objects are distorted because this projection deforms the distances between meridians into parallel lines, increasing their real widht more and more as it approaches the poles, and also enlarges the distance between parallels as it gets closer to the poles.</description>
     </item>
     
   </channel>

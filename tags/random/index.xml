@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Random on Pedro Mas personal webpage</title>
+    <link>https://pedromasb.github.io/tags/random/</link>
+    <description>Recent content in Random on Pedro Mas personal webpage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jan 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/random/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why every world map is wrong</title>
+      <link>https://pedromasb.github.io/post/why-every-world-map-is-wrong/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/why-every-world-map-is-wrong/</guid>
+      <description>Have you ever wondered how is it possible to represent the Earth on a 2D map? If you haven´t, now is the time.
+In fact, every map of the world you have looked at is wrong, or rather distorted. This is the result of the Mercator projection, which is famous for its ability to represent loxodromes (lines crossing all meridians at a constant angle) as straight segments. Objects are distorted because this projection deforms the distances between meridians into parallel lines, increasing their real widht more and more as it approaches the poles, and also enlarges the distance between parallels as it gets closer to the poles.</description>
+    </item>
+    
+  </channel>
+</rss>

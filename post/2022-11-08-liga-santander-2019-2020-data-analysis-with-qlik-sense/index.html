@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>LaLiga Santander 2019/2020 data analysis with Qlik Sense | Pedro Mas personal webpage</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Who hasn&#39;t ever fantasized about having all the data of their favorite competition at hand to dive into its statistics? In this post, we will walk step-by-step through the entire process of data extraction, manipulation and visualization when approaching a Web Scraping project with Qlik Sense. To do so, we will use data from LaLiga Santander teams and players.">
+    <meta name="generator" content="Hugo 0.102.1" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+<link rel="shortcut icon" href="/images/PMB_logo_grey.svg" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="LaLiga Santander 2019/2020 data analysis with Qlik Sense" />
+<meta property="og:description" content="Who hasn&#39;t ever fantasized about having all the data of their favorite competition at hand to dive into its statistics? In this post, we will walk step-by-step through the entire process of data extraction, manipulation and visualization when approaching a Web Scraping project with Qlik Sense. To do so, we will use data from LaLiga Santander teams and players." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pedromasb.github.io/post/2022-11-08-liga-santander-2019-2020-data-analysis-with-qlik-sense/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-13T00:00:00+00:00" /><meta property="og:site_name" content="Pedro Mas personal webpage" />
+
+<meta itemprop="name" content="LaLiga Santander 2019/2020 data analysis with Qlik Sense">
+<meta itemprop="description" content="Who hasn&#39;t ever fantasized about having all the data of their favorite competition at hand to dive into its statistics? In this post, we will walk step-by-step through the entire process of data extraction, manipulation and visualization when approaching a Web Scraping project with Qlik Sense. To do so, we will use data from LaLiga Santander teams and players."><meta itemprop="datePublished" content="2020-05-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-05-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3175">
+<meta itemprop="keywords" content="Data,Qlik Sense," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LaLiga Santander 2019/2020 data analysis with Qlik Sense"/>
+<meta name="twitter:description" content="Who hasn&#39;t ever fantasized about having all the data of their favorite competition at hand to dive into its statistics? In this post, we will walk step-by-step through the entire process of data extraction, manipulation and visualization when approaching a Web Scraping project with Qlik Sense. To do so, we will use data from LaLiga Santander teams and players."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://pedromasb.github.io/images/bernabeu.jpeg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        <img src="/images/PMB_logo_grey.svg" class="w100 mw5-ns" alt="Pedro Mas personal webpage" />
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/research/" title="Research page">
+              Research
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/pedromasb" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.linkedin.com/in/pedro-mas-buitrago-55a769179/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="mailto:pmas@cab.inta-csic.es" target="_blank" class="Email ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Email link" rel="noopener" aria-label="follow on Email——Opens in a new window">
+      
+        Email
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">LaLiga Santander 2019/2020 data analysis with Qlik Sense</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Who hasn&#39;t ever fantasized about having all the data of their favorite competition at hand to dive into its statistics? In this post, we will walk step-by-step through the entire process of data extraction, manipulation and visualization when approaching a Web Scraping project with Qlik Sense. To do so, we will use data from LaLiga Santander teams and players.
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        BLOG
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pedromasb.github.io/post/2022-11-08-liga-santander-2019-2020-data-analysis-with-qlik-sense/&amp;title=LaLiga%20Santander%202019/2020%20data%20analysis%20with%20Qlik%20Sense" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">LaLiga Santander 2019/2020 data analysis with Qlik Sense</h1>
+      
+      <p class="tracked">
+        By <strong>Pedro Mas Buitrago</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-13T00:00:00Z">May 13, 2020</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Every sports and soccer fan ⚽️ has ever thought about how much we would like to have all the statistics of a league or competition at hand so that, beyond consulting them, we can carry out our own research. Imagine being able to analyze the performance of your favorite player or study the correlation between passing accuracy and points scored per team in a couple of seconds.</p>
+<p>There are many websites where we can consult the squad of the different teams in a league, the statistics of each player&hellip; <strong>but how to unify content that is segmented into hundreds of different URLs? how to transform all this data into information from which to extract knowledge?</strong></p>
+<p>Guided by a passion towards soccer and data of which I plead guilty ☝️, I will show you a practical example with <strong>LaLiga Santander 2019/2020</strong> data that I carried out a few days ago with <strong>Qlik Sense</strong>.</p>
+<h2 id="data-source-extraction-and-modeling">Data source, extraction and modeling</h2>
+<p>Within the universe of websites that provide statistics of LaLiga Santander, for this project we have selected the <a href="https://www.superdeporte.es/">Superdeporte</a> website. After researching and diving for a while through this portal, we found that the information we are interested in for our study is organized in three levels:</p>
+<ul>
+<li>
+<p><strong>Level 1</strong>: <a href="https://www.superdeporte.es/deportes/futbol/primera-division/estadisticas/">https://www.superdeporte.es/deportes/futbol/primera-division/estadisticas/</a>, where we can find the updated classification of the competition.</p>
+</li>
+<li>
+<p><strong>Level 2</strong>: <a href="https://www.superdeporte.es/deportes/futbol/primera-division/%7BTeamName%7D/">https://www.superdeporte.es/deportes/futbol/primera-division/{TeamName}/</a>, where we can find the squad of each team and the main information of each player.</p>
+</li>
+<li>
+<p><strong>Level 3</strong>: <a href="https://www.superdeporte.es/deportes/futbol/primera-division/%7BTeamName%7D/%7BPlayerName%7D.html">https://www.superdeporte.es/deportes/futbol/primera-division/{TeamName}/{PlayerName}.html</a>, where we can find the individual statistics of each player.</p>
+</li>
+</ul>
+<blockquote>
+<p>For example: <a href="https://www.superdeporte.es/deportes/futbol/primera-division/real-madrid/toni-kroos.html">https://www.superdeporte.es/deportes/futbol/primera-division/real-madrid/toni-kroos.html</a> takes you to the statistics of Toni Kross.</p>
+</blockquote>
+<p>Therefore, for each level 2 URL we will have N level 3 URLs, where N is the number of players of each level 2 URL (team).</p>
+<p>This type of process in which information is extracted from multiple web pages is usually called Web Scraping and, as we will see throughout this article, usually involves a combination of variables and <em>for</em> loops.</p>
+<p>Once we understand the way in which the data is organized in our source, we are now ready to think about the methodology we will follow to carry out its extraction.</p>
+<p>The strategy we will follow to extract the data will be as follows:</p>
+<ul>
+<li>
+<p>From <strong>level 1</strong> we will get the name of all the teams.</p>
+</li>
+<li>
+<p>Once we have the name of all the teams, we will build a loop that goes through all the URLs of <strong>level 2</strong> (one per team) and gives us the squad of each team.</p>
+</li>
+<li>
+<p>Once we have the name of all the teams and players, we will build a loop that goes through, for each <strong>level 2</strong> URL, all the <strong>level 3</strong> URLs (one per player) and gives us the individual statistics of each player.</p>
+</li>
+</ul>
+<figure><img src="/images/laliga/strategy_extraction.png"/>
+</figure>
+
+<p>A very important point is that, in the URLs, <strong>all names must be included in a characteristic format</strong> (no capital letters or special characters and replacing spaces with hyphens &lsquo;-&rsquo;), so when extracting these names we must apply this formatting.</p>
+<p>In <strong>Qlik Sense</strong>, the most efficient way to carry out this formatting is through <em>Mapping Tables</em>, which are temporarily stored in memory and are automatically deleted after the execution of the script. In them, we must define the values we want to replace in the first column and the desired values in the second column.</p>
+<p>Finally, to load data directly from a URL, it is necessary to activate the <strong>Qlik Sense <em>Legacy Mode</em></strong>. To do this, we need to open the file</p>
+<p><code>C:\Users\user\Documents\Qlik\Sense\Setting.ini</code></p>
+<p>in a text editor and change <em>StandardReload</em> = 1 to <em>StandardReload</em> = 0.</p>
+<p>Once we have the strategy well defined, it&rsquo;s time to start coding!</p>
+<h2 id="loading-classification-and-squads">Loading Classification and Squads</h2>
+<p>Loading the classification will be very straightforward, we will simply load the table corresponding to the classification in the URL of <strong>level 1</strong> into <strong>Qlik Sense</strong>.</p>
+<p>Although we are extracting the data directly from a URL, it is <strong>highly recommended to create a &lsquo;Web File&rsquo; connection to the web site</strong>, so that we can explore all the tables available in that site through the &lsquo;Select data&rsquo; option.</p>
+<p>As mentioned above, it is necessary to <em>apply a formatting to the name of the teams</em>.</p>
+<p>This is done in line 4, where we use the <strong>MapSubString()</strong> function to apply the <em>Mapping Table</em>, which we have named &lsquo;Names_Mapping&rsquo;, on the field containing the name of the teams.</p>
+<figure><img src="/images/laliga/class_squads.png"/>
+</figure>
+
+<p>Now that we have all the team names correctly formatted and stored in the <em>team</em> field, the next step is to store in a table the squad of all the teams of <strong>LaLiga Santander</strong>.</p>
+<p>This is where <strong>Web Scraping</strong> techniques come into play.</p>
+<p>There are 20 teams participating in LaLiga Santander, so to extract the squad of all of them we will have to access <strong>20 different URLs</strong>. It would be possible to do this by defining 20 different data loads, <strong>but what if there were 100 URLs? what if there were 1,000?</strong></p>
+<p>Let&rsquo;s see how we could automate this process.</p>
+<p>As we have seen in the previous section, the URL of the different teams (<strong>level 2</strong>) varies only in the name of the team, so <strong>we will build a loop that in each iteration will change the name of the team in the URL from which the data is loaded.</strong></p>
+<p>The way to do this in Qlik Sense is through a <em><strong>for each &hellip; next</strong></em> statement (lines 19-36 of the figure above). What this construct does is to execute all the statements included between <em><strong>for each</strong></em> and <em><strong>next</strong></em> for each existing value in a list.</p>
+<p>Thus, we define the variable <em><strong>vEquipo</strong></em>, which will acquire a new value from the list (<em><strong>FieldValueList(&rsquo;team&rsquo;)</strong></em> creates a list with all the values of the <em>team</em> field) for each execution of the loop, and we will include this variable in the URL from which the data is loaded in each iteration, so that the loop loads the squad of a different team in each iteration until it runs through the entire space of values of the <em>team</em> field.</p>
+<p>The loaded data will be concatenated in the same table, as <strong>Qlik concatenates by default data loads that have the same structure</strong>.</p>
+<p>For each player we will also create a <em>team-player</em> key that will uniquely identify each player (two players can have the same first and last name).</p>
+<p>Finally, the <em><strong>next</strong></em> clause tells the loop that it can now move on to the next iteration.</p>
+<figure><img src="/images/laliga/player_table.png"/>
+</figure>
+
+<h2 id="loading-player-statistics">Loading Player Statistics</h2>
+<p>To load the statistics for each player, <strong>we will build a nested loop</strong>, with an outer <em><strong>for each &hellip; next</strong></em> loop that iterates between all the teams and an inner <em><strong>for each &hellip; next</strong></em> loop that iterates through all the players included in each team&rsquo;s squad.</p>
+<p>The figure below shows this nested loop, in which the squad corresponding to each team is loaded in order to iterate through all the players.</p>
+<p>A problem that I found when performing the first loads, was that <strong>not all players had a web page with their statistics</strong>, so the data load gave error when it did not find the URL and it was interrupted.</p>
+<p>This problem is solved with the sentence that you can see in line 1 of the figure below, <em><strong>set errormode = 0</strong></em>, which establishes that the data load is not interrupted when an error is found.</p>
+<p>It is important to delete the temporary table at the end of each iteration of the outer loop, and reset <em><strong>set errormode = 1</strong></em> once the nested loop is finished.</p>
+<figure><img src="/images/laliga/player_screenshot.png"/>
+</figure>
+
+<p>If we take a look at the page of a player, for example <a href="https://www.superdeporte.es/deportes/futbol/primera-division/real-madrid/toni-kroos.html">Toni Kroos</a>, we will see how the statistics are divided into several different tables, so <strong>in the loading process we will concatenate all the statistics in a master table</strong> (Figure below).</p>
+<p>To each attribute or category we will add a prefix indicating its source table in the URL, and with the <em><strong>Match()</strong></em> function we will define the categories we want to load from each table.</p>
+<p>To define the upload URL, we will use the method described in the previous section.</p>
+<figure><img src="/images/laliga/player_screenshot_2.png"/>
+</figure>
+
+<p>Once this load is finished, we will have a table (<em>STATS_TEMP</em>) consisting of a <em>key</em> field (<em>player_key</em>), an <strong>attribute</strong> field (<em>category</em>) and a <strong>data</strong> field with the value corresponding to each combination key - category.</p>
+<p>This is not at all efficient for the type of study we want to perform, so <strong>let&rsquo;s see how we can format the table to have only one record (row) per player</strong>.</p>
+<p>What we need to do is to <strong>pivot the data</strong> so that each attribute field value corresponds to a column and transform the data field into the column data.</p>
+<p>Although there is no specific function to perform this operation in <strong>Qlik Sense</strong>, there are several ways to do it.</p>
+<p>First, we will create a table (<em>Players_Keys</em>) with all the distinct keys of the players (Figure below).</p>
+<p>Then, we will build a new <em><strong>for each &hellip; next</strong></em> loop that iterates through all the distinct values of the attribute field. At each iteration, we will do a JOIN to add a new column to the <em>Players_Keys</em> table with the attribute as the column name and the value of the data field corresponding to that attribute as the column data.</p>
+<p>This way, we will have a new table with one record (row) per player and as many columns as attributes (categories) we have previously loaded. Finally, do not forget to delete the unpivoted table (<em>STATS_TEMP</em>).</p>
+<p>Now, <strong>we have our target table with the statistics of each player</strong>.</p>
+<p>However, notice that the name of each column will be the name of each attribute as it is written in the URL, preceded by a prefix indicating the source table in the URL, as we have defined it.</p>
+<p>Therefore, our last step will be to load all the fields of the table (<em>Player_Keys</em>) giving each field the name we want.</p>
+<p>Great! We have already managed to extract the individual statistics and store them in an efficient way to perform a good analysis.</p>
+<p>Before proceeding to the analysis, we must clearly define the metrics that we are going to use, since it is usually more useful and efficient to define them in the Script</p>
+<h2 id="creating-metrics">Creating Metrics</h2>
+<p><strong>We are going to define our metrics in the last loading process</strong>, where we have renamed all the fields in the final table. We can create any metric we are interested in measuring in our study.</p>
+<p>We are going to analyze which are the top 25 attackers in <strong>LaLiga Santander</strong>, but in addition to the goals scored we will also take into account the <strong>accuracy</strong> and <strong>effectiveness</strong>.</p>
+<p>To do so, we will create a metric that gives 60% weight to goals scored, 20% to accuracy (goals/shots), 15% to effectiveness (goals/matches played) and 5% to assists (Image 7).</p>
+<p>We will also store the effectiveness and accuracy ratios mentioned above.</p>
+<figure><img src="/images/laliga/metrics.png"/>
+</figure>
+
+<p>To make our data visualization more efficient and intuitive, <strong>we will normalize the metric we have created to the interval [0,100]</strong>, and we will also create a ranking of the best attackers according to this metric so that later it will be easier to filter the visualizations.</p>
+<p>First, we are going to load in a table all the values of the calculated metric ordered from highest to lowest. With the <em><strong>Peek()</strong></em> function we store in a variable (<em>vTopStriker</em>) the maximum value of this metric and delete the created table.</p>
+<p>Then, we load again all the values of the metrics table adding a new field with the normalized metric (<em>metric_topstriker</em>).</p>
+<p><strong>A very simple and effective way to create rankings</strong> in <strong>Qlik Sense</strong> is to sort the table by the field we want to rank from highest to lowest, and add a new field with the row number through the <em><strong>RowNo()</strong></em> function.</p>
+<p>With the final table already loaded, we can delete the previous auxiliary tables.</p>
+<figure><img src="/images/laliga/metrics_2.png"/>
+</figure>
+
+<p>With the data structured in an efficient way and our metrics created, <strong>we are now ready to proceed with the analysis</strong>.</p>
+<figure><img src="/images/laliga/final_table.png"/>
+</figure>
+
+<h2 id="visualizing-the-data">Visualizing the data</h2>
+<p>First, let&rsquo;s see how we can <strong>visualize the ranking of the top 25 attackers</strong> according to the metric we defined in the previous section.</p>
+<blockquote>
+<p>If you find any metric in which Messi does not stand out by much, please share it with this Real Madrid fan&rsquo;s heart.</p>
+</blockquote>
+<p>To do so, let&rsquo;s create a master measure defined by the following expression (it provides the metric for those players whose ranking is equal to or lower than 25):</p>
+<p><code>=sum({&lt;topstriker_ranking = {&quot;&lt;= 25&quot;}&gt;} metric_topstriker).</code></p>
+<p>In general, <strong>the most intuitive way to visualize a ranking is through a bar chart</strong>.</p>
+<p>We have chosen a horizontal bar chart (if the number of groupings allows it, it is good practice to make it vertical) so that all 25 players are visible, and we have color-coded each player according to his &lsquo;score&rsquo; in our metric.</p>
+<p>When representing nominal data, always remember to order the categories from highest to lowest to facilitate the interpretation of the graph (not applicable when working with ordinal data because the categories already have an intrinsic hierarchy).</p>
+<p>On the other hand, always try to use pastel color palettes to ensure a better user experience.</p>
+<figure><img src="/images/laliga/bar_chart.png"/>
+</figure>
+
+<p>We will now study the <strong>relationship between two quantitative variables</strong>, the ratio of good passes of a team (good passes / total passes) and its number of goals scored.</p>
+<p>When studying two independent variables, as in this case, <strong>we can study the degree of correlation between both variables through a scatter diagram</strong>.</p>
+<p>As this diagram shows (Figure below), there seems to be some positive correlation between both variables (it is interesting to note the considerable number of goals scored by Getafe with the worst percentage of successful passes by far).</p>
+<p>Keep in mind that the <strong>visual analysis is not enough to determine if there is a correlation</strong>, for that we would have to perform a statistical analysis, calculating the correlation coefficient and performing a hypothesis test to see if the coefficient is statistically significant.</p>
+<blockquote>
+<p>It is very important to understand that <strong>correlation does not imply causality</strong>.</p>
+</blockquote>
+<p>Causality is a value judgment that requires more information.</p>
+<p>The correlation could be totally coincidental or there could be a third variable that causes our study variables to change at the same time.</p>
+<p><strong>It is very important in scatter diagrams to label the points</strong>, as this greatly facilitates the interpretation of the graph. In cases like this, where the dimensional values are too long, it is good practice to abbreviate them.</p>
+<p>Notice how, however, there are several different team names whose first word is &lsquo;Real&rsquo;, so these names cannot be abbreviated for proper identification.</p>
+<p>One way around this problem is to create the dimension (or create a new dimension field in the script) as follows:</p>
+<p><code>=if(left(team_name,4) = 'Real', team_name, left(team_name,3))</code></p>
+<figure><img src="/images/laliga/scatter.png"/>
+</figure>
+
+<p>Finally, I thought it was interesting to try to study <strong>how different measures influence the position of teams</strong>.</p>
+<p>Does the average age of a team have any influence on its position? are the more aggressive teams lower or higher in the table?</p>
+<p>To do this, I came up with the idea of visually representing the competition table by means of a scatter plot and making the color and size of the dots vary according to the measure, but in a way that makes it possible to quickly switch between measures.</p>
+<p>This is possible through the creation of an &lsquo;island table&rsquo; in the model, that is, a table that has no relationship with the other tables in the model and that we will only use to filter between different fields within the same visualization.</p>
+<figure><img src="/images/laliga/island.png"/>
+</figure>
+
+<p>The figure above shows how to create an island table. In it, we have to define a new field (<em>Size</em>) that includes the name of all the fields among which we will want to select within the visualization.</p>
+<p>In our case, depending on the field we will want to apply a different measure. <strong>We are interested in adding the number of goals, but averaging the age</strong>.</p>
+<p>We will then create another column in the island table (<em>size_num</em>) to identify the fields we want to sum or average.</p>
+<p>Now comes the important part, <strong>how do we connect our visualization to this island table?</strong></p>
+<p>We will do it by creating the following master measure:</p>
+<p><code>=Pick(size_num, sum($(=GetFieldSelections(Size))), Avg($(=GetFieldSelections(Size))))</code></p>
+<p>First, the <em><strong>GetFieldSelections()</strong></em> function returns a string with the current selections of a field (<em><strong>GetFieldSelections(Size)</strong></em> returns the current selection of the <em>Size</em> field), and the <em><strong>$()</strong></em> expansion evaluates the expression we input inside.</p>
+<p>Then, through the <em><strong>Pick()</strong></em> function we can indicate the measure we want to apply on the selected field thanks to the numeric identifier that we have included in the island table.</p>
+<p>Next to the visualization, we will include a filter pane with the selection field (<em>Size</em>) that we have created in the island table.</p>
+<p>By associating the color and size of the bubbles to this master measure, these properties will vary according to the field we select in the filter pane.</p>
+<p>Although it is not necessary, for a better user experience it is convenient to activate the option &lsquo;Always a selected value&rsquo; for the selection field, since we are interested that there is always a single value selected in this field.</p>
+<p><strong>To visually represent the classification</strong>, we have used a scatter plot with the position on the X-axis and the points on the Y-axis.</p>
+<p>As you can see in the figures below, we have reversed the X-axis so that the direction is increasing on both axes (lower position implies more points).</p>
+<p>To do this we have entered the negative value of the position on the X-axis and applied the following custom numeric format: #,## ; #,## . We have simply removed the minus sign from the format corresponding to the negative numbers (after the semicolon).</p>
+<p>Let&rsquo;s look at two examples.</p>
+<p>In the first figure, we have set the selection field to age, so that the size and color of the bubbles is coded according to the average age of the teams.</p>
+<p>Maybe someone should tell Eibar to put more faith in the young players, or Celta that a couple of old legends always come in handy in any locker room.</p>
+<figure><img src="/images/laliga/final_1.png"/>
+</figure>
+
+<p>In this other example (Figure below), we have set the selection field to fouls committed, so that the size and color of the bubbles is coded according to the total number of fouls committed by the team.</p>
+<p>If you face Getafe with the idea of having long possessions, you might not go home very happy, while Valencia will probably let you play more with the ball.</p>
+<figure><img src="/images/laliga/final_2.png"/>
+</figure>
+
+<h2 id="and-now-its-your-turn">And now, it&rsquo;s your turn!</h2>
+<p>In this post, we have explored the <strong>entire process of data extraction, manipulation and visualization</strong> when approaching a Web Scraping project with <strong>Qlik Sense</strong>, one of the best Data Discovery tools thanks to its associative model.</p>
+<p>We have seen some of the problems that can arise in a study of these characteristics and how to approach them, plus a couple of tips and tricks to make your visualizations visually impactful and valuable for your analysis.</p>
+<p>I hope you enjoyed it and that you got some ideas to apply to your own projects.</p>
+<p>If you found it useful, don&rsquo;t hesitate to share it!</p>
+<p>See you around 😉</p>
+<figure><img src="/images/pm_diagram.png"/>
+</figure>
+
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/data" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/qlik-sense" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Qlik Sense</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-mid-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://pedromasb.github.io/" >
+    &copy;  Pedro Mas personal webpage 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/pedromasb" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.linkedin.com/in/pedro-mas-buitrago-55a769179/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="mailto:pmas@cab.inta-csic.es" target="_blank" class="Email ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Email link" rel="noopener" aria-label="follow on Email——Opens in a new window">
+      
+        Email
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
