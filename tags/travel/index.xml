@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travel on Pedro Mas personal webpage</title>
+    <link>https://pedromasb.github.io/tags/travel/</link>
+    <description>Recent content in Travel on Pedro Mas personal webpage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/travel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A weekend working at Roque de los Muchachos Observatory</title>
+      <link>https://pedromasb.github.io/post/2023-03-09-roque-de-los-muchachos-observatory/</link>
+      <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/2023-03-09-roque-de-los-muchachos-observatory/</guid>
+      <description>This January, I had the great opportunity to work for two nights at the Nordic Optical Telescope (NOT), one of the many telescopes located at Roque de los Muchachos Observatory on La Palma (Canary Islands). Apart from being one of the most renowned observatories in the world, Roque stands out for it unique location. At an altitude of 2396 meters above sea level, the landscape of the Taburiente National Park and the sea of clouds characteristic of La Palma, which is formed due to the exceptional conditions of the island, are truly breathtaking.</description>
+    </item>
+    
+  </channel>
+</rss>
