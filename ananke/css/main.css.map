@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/pcdisk/curie/pmas/PERSONAL/personal_web",
+	"sourceRoot": "/home/pmas/PERSONAL/personal_web",
 	"sources": [
 		"stdin"
 	],
