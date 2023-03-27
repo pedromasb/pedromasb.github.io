@@ -8,7 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://pedromasb.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A weekend working at Roque de los Muchachos Observatory</title>
+      <title>Dimensionality Reduction for Data Visualization With Python</title>
+      <link>https://pedromasb.github.io/post/2023-03-27-dimensionality-reduction-for-data-visualization-with-python/</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/2023-03-27-dimensionality-reduction-for-data-visualization-with-python/</guid>
+      <description>Dimensionality reduction is one of the techniques that is present in the day-to-day work of scientists and data analysts. In this brief tutorial we will explore the use of different dimensionality reduction algorithms in Python for data visualization and exploration.
+Using the data provided by the Sunspot Index and Long-term Solar Observations (SILSO) on the monthly mean total sunspot number, we use two of the most popular dimensionality reduction algorithms: T-Distributed Stochastic Neighborhood Embedding (T-SNE) and Uniform Manifold Approximation and Projection (UMAP), to &amp;ldquo;take a look&amp;rdquo; at the overall context of a 12-dimensional data set:</description>
+    </item>
+    
+    <item>
+      <title>A Weekend Working at Roque de los Muchachos Observatory</title>
       <link>https://pedromasb.github.io/post/2023-03-09-roque-de-los-muchachos-observatory/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
@@ -17,7 +27,7 @@
     </item>
     
     <item>
-      <title>LaLiga Santander 2019/2020 data analysis with Qlik Sense</title>
+      <title>LaLiga Santander 2019/2020 Data Analysis with Qlik Sense</title>
       <link>https://pedromasb.github.io/post/2022-11-08-liga-santander-2019-2020-data-analysis-with-qlik-sense/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -27,7 +37,7 @@ There are many websites where we can consult the squad of the different teams in
     </item>
     
     <item>
-      <title>The structure of the universe</title>
+      <title>The Structure of the Universe</title>
       <link>https://pedromasb.github.io/post/the-structure-of-the-universe/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
@@ -36,7 +46,7 @@ There are many websites where we can consult the squad of the different teams in
     </item>
     
     <item>
-      <title>Why every world map is wrong</title>
+      <title>Why Every World Map is Wrong</title>
       <link>https://pedromasb.github.io/post/why-every-world-map-is-wrong/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       

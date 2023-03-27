@@ -6,9 +6,19 @@
     <description>Recent content in Data on Pedro Mas personal webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LaLiga Santander 2019/2020 data analysis with Qlik Sense</title>
+      <title>Dimensionality Reduction for Data Visualization With Python</title>
+      <link>https://pedromasb.github.io/post/2023-03-27-dimensionality-reduction-for-data-visualization-with-python/</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/2023-03-27-dimensionality-reduction-for-data-visualization-with-python/</guid>
+      <description>Dimensionality reduction is one of the techniques that is present in the day-to-day work of scientists and data analysts. In this brief tutorial we will explore the use of different dimensionality reduction algorithms in Python for data visualization and exploration.
+Using the data provided by the Sunspot Index and Long-term Solar Observations (SILSO) on the monthly mean total sunspot number, we use two of the most popular dimensionality reduction algorithms: T-Distributed Stochastic Neighborhood Embedding (T-SNE) and Uniform Manifold Approximation and Projection (UMAP), to &amp;ldquo;take a look&amp;rdquo; at the overall context of a 12-dimensional data set:</description>
+    </item>
+    
+    <item>
+      <title>LaLiga Santander 2019/2020 Data Analysis with Qlik Sense</title>
       <link>https://pedromasb.github.io/post/2022-11-08-liga-santander-2019-2020-data-analysis-with-qlik-sense/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
