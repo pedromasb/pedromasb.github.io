@@ -6,7 +6,17 @@
     <description>Recent content in Pedro Mas Buitrago on Pedro Mas personal webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Grid Search For Autoencoder Hyperparameter Tuning</title>
+      <link>https://pedromasb.github.io/post/2023-05-16-using-grid-search-for-autoencoder/</link>
+      <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/2023-05-16-using-grid-search-for-autoencoder/</guid>
+      <description>Finding the optimal combination of hyperparameters can be a tedious task when building a deep learning model. In this context, the grid search tuning technique is one of the most useful for hyperparameter optimization, and is accessible through the GridSearchCV class (documentation) of the scikit-learn package. Thanks to this technique, the user can evaluate the model for each hyperparameter combination throughout the desired parameter space.
+In this brief tutorial we will build a deep autoencoder to reconstruct the images provided by the well known MNIST database of handwritten digits, which is available through the tensorflow.</description>
+    </item>
+    
     <item>
       <title>Dimensionality Reduction for Data Visualization With Python</title>
       <link>https://pedromasb.github.io/post/2023-03-27-dimensionality-reduction-for-data-visualization-with-python/</link>
