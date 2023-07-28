@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "C:/Users/sakda/Desktop/PEDRO/personal_web",
+	"sourceRoot": "/pcdisk/curie/pmas/PERSONAL/personal_web",
 	"sources": [
 		"stdin"
 	],
