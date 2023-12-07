@@ -6,7 +6,17 @@
     <description>Recent content in Pedro Mas Buitrago on Pedro Mas personal webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interactive Plotting With Python: From Zero to Hero 🚀</title>
+      <link>https://pedromasb.github.io/post/2023-12-06-interactive-plotting-with-python-from-zero-to-hero/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/2023-12-06-interactive-plotting-with-python-from-zero-to-hero/</guid>
+      <description>Static data reporting is great when we want the user to focus on a specific view or behavior of the data. However, it can be limiting when the data is too complex or when we want to share different perspectives at the same time.
+Interactive data sharing enables data discovery, giving users freedom to delve into the data, create their own contexts and discover new patterns and relationships that were not pre-established.</description>
+    </item>
+    
     <item>
       <title>Using Grid Search For Autoencoder Hyperparameter Tuning</title>
       <link>https://pedromasb.github.io/post/2023-05-16-using-grid-search-for-autoencoder/</link>

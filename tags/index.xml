@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Pedro Mas personal webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pedromasb.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data</title>
       <link>https://pedromasb.github.io/tags/data/</link>
-      <pubDate>Tue, 16 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://pedromasb.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Viz</title>
+      <link>https://pedromasb.github.io/tags/viz/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/tags/viz/</guid>
       <description></description>
     </item>
     
