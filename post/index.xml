@@ -46,5 +46,15 @@ Using the data provided by the Sunspot Index and Long-term Solar Observations (S
       <description>This January, I had the great opportunity to work for two nights at the Nordic Optical Telescope (NOT), one of the many telescopes located at Roque de los Muchachos Observatory on La Palma (Canary Islands). Apart from being one of the most renowned observatories in the world, Roque stands out for it unique location. At an altitude of 2396 meters above sea level, the landscape of the Taburiente National Park and the sea of clouds characteristic of La Palma, which is formed due to the exceptional conditions of the island, are truly breathtaking.</description>
     </item>
     
+    <item>
+      <title>LaLiga Santander 2019/2020 Data Analysis with Qlik Sense</title>
+      <link>https://pedromasb.github.io/post/2022-11-08-liga-santander-2019-2020-data-analysis-with-qlik-sense/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pedromasb.github.io/post/2022-11-08-liga-santander-2019-2020-data-analysis-with-qlik-sense/</guid>
+      <description>Every sports and soccer fan ⚽️ has ever thought about how much we would like to have all the statistics of a league or competition at hand so that, beyond consulting them, we can carry out our own research. Imagine being able to analyze the performance of your favorite player or study the correlation between passing accuracy and points scored per team in a couple of seconds.
+There are many websites where we can consult the squad of the different teams in a league, the statistics of each player&amp;hellip; but how to unify content that is segmented into hundreds of different URLs?</description>
+    </item>
+    
   </channel>
 </rss>
